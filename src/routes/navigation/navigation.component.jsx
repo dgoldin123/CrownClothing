@@ -18,7 +18,7 @@ const Navigation = () => {
       <NavigationContainer>
         <LogoContainer to='/'><CrwnLogo /></LogoContainer>
           <NavLinks>
-            <NavLink to='/shop'>SHOP</NavLink>
+            <NavLink to='/shop'>SHOPppp</NavLink>
             {currentUser ? (
               <NavLink as='span' onClick={signOutUser}>SIGN OUT</NavLink>
             ) : (
