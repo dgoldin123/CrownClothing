@@ -4,20 +4,15 @@ import { CartContext } from '../../contexts/cart.context';
 import Button from '../button/button.component';
 import CartItem from '../cart-item/cart-item.component';
 
-/*
-import React from 'react';
-import { useContext } from 'react';
-import { CartContext } from '../../contexts/cart.context';
-import Button from '../button/button.component';
-import CartItem from '../cart-item/cart-item.component';
-import { useNavigate } from 'react-router-dom';
-*/
 import { CartDropdownContainer, EmptyMessage, CartItems } from './cart-dropdown.styles';
 
 const CartDropdown = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems,setIsCartOpen } = useContext(CartContext);
   const navigate = useNavigate();
-  const goToCheckoutHandler = () => { navigate('/checkout'); };
+  const goToCheckoutHandler = () => { 
+    setIsCartOpen(false);
+    navigate('/checkout'); 
+  };
 
   return (
     <CartDropdownContainer>
