@@ -14,6 +14,7 @@ const Navigation = () => {
   const currentUser = useSelector(selectCurrentUser);
   const isCartOpen = useSelector(selectIsCartOpen);
   const signOutUser = () => dispatch(signOutStart());
+  //console.log(currentUser.displayName);
 
   return (
     <Fragment>
@@ -24,7 +25,7 @@ const Navigation = () => {
         <NavLinks>
           <NavLink to='/shop'>SHOP</NavLink>
           {currentUser ? (
-            <NavLink as='span' onClick={signOutUser}>SIGN OUT</NavLink>
+            <NavLink as='span' onClick={signOutUser}>SIGN OUT {currentUser.displayName}</NavLink>
           ) : (
             <NavLink to='/auth'>SIGN IN</NavLink>
           )}
